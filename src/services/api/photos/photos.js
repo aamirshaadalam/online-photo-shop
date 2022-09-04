@@ -9,6 +9,6 @@ import { CoreApi } from '../utilities';
  */
 export const getPhotosApi = (url, actions = []) => {
   const options = { url };
-  actions.forEach((endpoint) => (options[endpoint] = true));
+  actions.forEach((action) => (options[action] = true));
   return new CoreApi(options);
 };
