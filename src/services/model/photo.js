@@ -1,3 +1,5 @@
+const BASE_URL = 'https://picsum.photos/id';
+
 export class Photo {
   constructor(photo) {
     const { id, author, width, height, url, download_url } = photo;
@@ -7,9 +9,21 @@ export class Photo {
     this.width = width;
     this.height = height;
     this.url = url;
-    this.imageURL = download_url;
+    this.getImageURL = getImageURL(id, download_url);
   }
 }
+
+export const getImageURL = (id, defaultURL) => {
+  return (width, height) => {
+    if (width && height) {
+      return `${BASE_URL}/${id}/${width}/${height}`;
+    } else if (width) {
+      return `${BASE_URL}/${id}/${width}`;
+    }
+
+    return defaultURL;
+  };
+};
 
 export const parsePhotos = (photos) => {
   if (photos && photos.length > 0) {

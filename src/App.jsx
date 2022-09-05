@@ -1,11 +1,12 @@
 import { Catalog } from './components/photos';
-import { NavBar } from './components/common';
+import { Footer, NavBar } from './components/common';
 
 function App() {
   return (
     <div className='App'>
       <NavBar />
       <Catalog />
+      <Footer />
     </div>
   );
 }

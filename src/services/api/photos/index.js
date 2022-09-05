@@ -1,1 +1,1 @@
-export { getAllPhotos } from './photos';
+export { getAllPhotos, getPhoto } from './photos';

@@ -1,0 +1,5 @@
+.footer {
+    @apply bg-slate-800 border rounded-b-xl h-36 px-10
+    shadow-xl sticky top-0 flex flex-row 
+    justify-between;
+}

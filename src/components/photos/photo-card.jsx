@@ -6,7 +6,7 @@ const PhotoCard = ({ photo }) => {
   const [isLoading, setLoading] = useState(true);
   const imgEl = useRef(null);
   const divEl = useRef(null);
-  const { imageURL, author } = photo;
+  const { getImageURL, author } = photo;
 
   useEffect(() => {
     if (isLoading) {
@@ -20,7 +20,7 @@ const PhotoCard = ({ photo }) => {
     <>
       <ImagePlaceholder show={isLoading} />
       <div ref={divEl} className='photo-card'>
-        <img ref={imgEl} src={imageURL} alt={author} loading='lazy' onLoad={() => setLoading(false)} />
+        <img ref={imgEl} src={getImageURL(200)} alt={author} loading='lazy' onLoad={() => setLoading(false)} />
       </div>
     </>
   );
