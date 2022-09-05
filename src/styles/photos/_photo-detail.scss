@@ -1,0 +1,16 @@
+.photo-detail {
+    @apply flex flex-row justify-start h-4/5 m-6;
+
+    .photo {
+        @apply border p-2 rounded m-1 flex 
+        justify-center w-2/5 ring-1 ring-slate-100 ring-inset;
+
+        img {
+            @apply rounded;
+        }
+    }
+
+    .detail {
+        @apply border w-3/5 m-1 rounded;
+    }
+}
