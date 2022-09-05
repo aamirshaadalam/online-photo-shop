@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import PhotoCard from './photo-card';
-import { getPhotosApi } from '../services/api/photos/photos';
-import { parsePhotos } from '../services/model';
+import { PhotoCard } from './index';
+import { getAllPhotos } from '../../services/api/photos';
+import { parsePhotos } from '../../services/model';
 
 const PhotoList = () => {
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
-    const photosApi = getPhotosApi('v2/list?page=1&limit=25', ['getAll']);
-    photosApi.getAll().then((response) => {
+    getAllPhotos(1, 25).then((response) => {
       setPhotos(parsePhotos(response));
     });
   }, []);

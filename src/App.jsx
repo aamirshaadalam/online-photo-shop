@@ -1,11 +1,13 @@
-import Home from './components/home';
-// import ImagePlaceholder from './components/image-placeholder';
+import { Catalog, PhotoDetail } from './components/photos';
+import { Footer, NavBar } from './components/common';
 
 function App() {
   return (
-    <div className='App'>
-      {/* <ImagePlaceholder /> */}
-      <Home />
+    <div className='photo-shop'>
+      <NavBar />
+      {/* <Catalog /> */}
+      <PhotoDetail photoId={110} />
+      <Footer />
     </div>
   );
 }

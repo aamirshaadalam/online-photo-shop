@@ -1,0 +1,8 @@
+.photo-card {
+    @apply p-3 w-52 h-52 cursor-pointer sm:m-4 m-2
+    shadow-xl rounded-lg border;
+
+    img {
+        @apply w-full rounded-lg h-full;
+    }
+}

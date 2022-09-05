@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-// @import "./styles/home";
-@import "./styles/nav-bar";
-@import "./styles/photo-list";
-@import "./styles/photo-card";
-@import "./styles/image-placeholder";
+// @import "./styles/photos/catalog";
+@import "./styles/common/nav-bar";
+@import "./styles/common/image-placeholder";
+@import "./styles/common/pagination";
+@import "./styles/common/footer";
+
+@import "./styles/photos/photo-list";
+@import "./styles/photos/photo-card";
+@import "./styles/photos/photo-detail";
+
+.photo-shop {
+    height: 100vh;
+}

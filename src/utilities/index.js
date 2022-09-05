@@ -1,1 +1,1 @@
-export { setDisplay } from './helper';
+export { setStyle, hideElements, showElements, addCSSClass } from './helper';

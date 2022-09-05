@@ -1,7 +1,5 @@
 import axios from 'axios';
-import { handleError, handleResponse } from './index';
-
-const BASE_URL = 'https://picsum.photos/';
+import { BASE_URL, handleError, handleResponse } from './index';
 
 /**
  *
@@ -92,7 +90,7 @@ const remove = async (resource, id) => {
   }
 };
 
-export const apiProvider = {
+export const api = {
   get,
   getAll,
   patch,

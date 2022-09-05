@@ -1,26 +1,26 @@
 import React, { useState, useRef, useEffect } from 'react';
-import ImagePlaceholder from './image-placeholder';
-import { setDisplay } from '../utilities';
+import { ImagePlaceholder } from '../common';
+import { hideElements, showElements } from '../../utilities';
 
 const PhotoCard = ({ photo }) => {
   const [isLoading, setLoading] = useState(true);
   const imgEl = useRef(null);
   const divEl = useRef(null);
-  const { downloadUrl, author } = photo;
+  const { getImageURL, author } = photo;
 
   useEffect(() => {
     if (isLoading) {
-      setDisplay('none', [imgEl, divEl]);
+      hideElements([imgEl, divEl]);
     } else {
-      setDisplay('block', [imgEl, divEl]);
+      showElements([imgEl, divEl]);
     }
   }, [isLoading]);
 
   return (
     <>
-      {isLoading && <ImagePlaceholder />}
+      <ImagePlaceholder show={isLoading} />
       <div ref={divEl} className='photo-card'>
-        <img ref={imgEl} src={downloadUrl} alt={author} loading='lazy' onLoad={() => setLoading(false)} />
+        <img ref={imgEl} src={getImageURL(200)} alt={author} loading='lazy' onLoad={() => setLoading(false)} />
       </div>
     </>
   );

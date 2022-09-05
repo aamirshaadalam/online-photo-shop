@@ -1,14 +1,8 @@
-import { CoreApi } from '../utilities';
+import { api } from '../utilities';
 
-/**
- * List of valid actions:
- * ['get', 'getAll', 'patch', 'post', 'put', 'remove']
- * @param {string} url
- * @param {string[]} actions
- * @returns
- */
-export const getPhotosApi = (url, actions = []) => {
-  const options = { url };
-  actions.forEach((action) => (options[action] = true));
-  return new CoreApi(options);
+export const getAllPhotos = (page, limit) => {
+  const url = `v2/list?page=${page}&limit=${limit}`;
+  return api.getAll(url);
 };
+
+export const getPhoto = () => {};

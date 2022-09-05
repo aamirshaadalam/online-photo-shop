@@ -1,0 +1,21 @@
+.pagination-container {
+    @apply flex flex-row justify-center 
+    items-center m-4;
+
+    .navigator {
+        @apply h-10 w-10 my-6 mx-1 cursor-pointer 
+        border p-3 stroke-2 stroke-blue-700 font-bold
+        rounded border-slate-200;
+    }
+
+    .page-number {
+        @apply h-10 w-10 text-center leading-10 
+        border border-slate-200 rounded
+        text-blue-600 m-1 cursor-pointer
+        underline underline-offset-2 font-light;
+
+        &.current {
+            @apply text-slate-500 cursor-default no-underline;
+        }
+    }
+}
