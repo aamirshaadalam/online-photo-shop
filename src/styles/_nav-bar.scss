@@ -1,3 +1,8 @@
 .nav-bar {
-    @apply bg-gray-100 border h-16 shadow-xl sticky top-0;
+    @apply bg-slate-100 border h-16 px-6
+    shadow-xl sticky top-0 flex flex-row justify-between;
+}
+
+.icon {
+    @apply h-6 w-6 my-4 mx-2 cursor-pointer text-slate-700;
 }

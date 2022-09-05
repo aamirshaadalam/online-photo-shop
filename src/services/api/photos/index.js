@@ -1,0 +1,1 @@
+export { getAllPhotos } from './photos';

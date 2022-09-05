@@ -7,7 +7,7 @@ export class Photo {
     this.width = width;
     this.height = height;
     this.url = url;
-    this.downloadUrl = download_url;
+    this.imageURL = download_url;
   }
 }
 

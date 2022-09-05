@@ -1,11 +1,11 @@
-import Home from './components/home';
-// import ImagePlaceholder from './components/image-placeholder';
+import { Catalog } from './components/photos';
+import { NavBar } from './components/common';
 
 function App() {
   return (
     <div className='App'>
-      {/* <ImagePlaceholder /> */}
-      <Home />
+      <NavBar />
+      <Catalog />
     </div>
   );
 }
