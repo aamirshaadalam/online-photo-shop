@@ -1,15 +1,12 @@
 import React from 'react';
+import PlaceholderImage from '../../assets/placeholder-image.png';
 
 const ImagePlaceholder = ({ show }) => {
   return (
     <>
       {show && (
-        <div className='img-placeholder'>
-          <div className='animate'>
-            <div className='circle'></div>
-            <div className='circle'></div>
-            <div className='circle'></div>
-          </div>
+        <div className='image-placeholder'>
+          <img src={PlaceholderImage} alt='loading' />
         </div>
       )}
     </>
