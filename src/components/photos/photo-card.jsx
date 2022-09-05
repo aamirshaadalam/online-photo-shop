@@ -5,24 +5,21 @@ import { hideElements, showElements } from '../../utilities';
 const PhotoCard = ({ photo }) => {
   const [isLoading, setLoading] = useState(true);
   const imgEl = useRef(null);
-  const divEl = useRef(null);
   const { getImageURL, author } = photo;
 
   useEffect(() => {
     if (isLoading) {
-      hideElements([imgEl, divEl]);
+      hideElements([imgEl]);
     } else {
-      showElements([imgEl, divEl]);
+      showElements([imgEl]);
     }
   }, [isLoading]);
 
   return (
-    <>
+    <div className='photo-card'>
       <ImagePlaceholder show={isLoading} />
-      <div ref={divEl} className='photo-card'>
-        <img ref={imgEl} src={getImageURL(200)} alt={author} loading='lazy' onLoad={() => setLoading(false)} />
-      </div>
-    </>
+      <img ref={imgEl} src={getImageURL()} alt={author} loading='lazy' onLoad={() => setLoading(false)} />
+    </div>
   );
 };
 
