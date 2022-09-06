@@ -1,6 +1,17 @@
-.photo-card {
-    @apply p-3 w-52 h-52 cursor-pointer sm:m-4 m-2
-    shadow-xl rounded-lg border;
+.photo {
+    @apply p-3 border rounded-lg h-full w-full;
+
+    &.clickable {
+        @apply cursor-pointer;
+    }
+
+    &.shadow {
+        @apply shadow-xl;
+    }
+
+    &.inset {
+        @apply ring-1 ring-slate-100 ring-inset;
+    }
 
     img {
         @apply w-full rounded-lg h-full;

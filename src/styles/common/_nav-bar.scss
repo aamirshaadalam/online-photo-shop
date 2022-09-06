@@ -1,7 +1,7 @@
 .nav-bar {
-    @apply bg-blue-600 border h-16 px-10
+    @apply bg-sky-900 border h-16 px-10
     shadow-xl sticky top-0 flex flex-row 
-    justify-between;
+    justify-between z-50;
 }
 
 .icon {

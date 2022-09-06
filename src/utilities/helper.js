@@ -1,3 +1,5 @@
+import { Photo } from '../services/model';
+
 export const setStyle = (property, value, refs) => {
   refs.forEach((ref) => {
     if (ref && ref.current) {
@@ -28,4 +30,12 @@ export const showElements = (refs) => {
       ref.current.classList.remove('invisible');
     }
   });
+};
+
+export const parsePhotos = (photos) => {
+  if (photos && photos.length > 0) {
+    return photos.map((photo) => new Photo(photo));
+  }
+
+  return [];
 };
