@@ -1,1 +1,1 @@
-export { setStyle, hideElements, showElements, addCSSClass } from './helper';
+export { setStyle, hideElements, showElements, addCSSClass, parsePhotos } from './helper';

@@ -1,1 +1,1 @@
-export { Photo, parsePhotos } from './photo';
+export { Photo } from './photo';
