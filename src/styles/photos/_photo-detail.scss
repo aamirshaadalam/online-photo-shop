@@ -7,43 +7,74 @@
     }
 
     .detail {
-        @apply w-1/2 ml-2 rounded-lg 
-        ring-1 ring-slate-100 ring-inset p-3 flex flex-col;
+        @apply w-1/2 ml-2
+        p-12 flex flex-col;
+
+        .value {
+            @apply text-slate-800 font-medium ml-2;
+        }
 
         h1 {
             @apply font-semibold text-2xl 
-            text-slate-800 block m-2;
+            text-slate-800 block mt-3 
+            capitalize;
         }
 
         h2 {
-            @apply font-medium text-lg 
-            text-slate-700 m-2;
+            @apply font-semibold text-lg 
+            text-slate-500 mt-3;
         }
 
-        span {
-            @apply block text-slate-600 text-sm
-            m-2;
+        .title {
+            @apply block text-slate-500 text-sm
+            mt-3 font-semibold;
         }
 
         .chips {
-            @apply flex sm:flex-row flex-col my-4;
+            @apply flex sm:flex-row flex-col my-2;
 
             .chip {
-                @apply border p-2 m-1 text-xs shadow-sm
-                text-slate-600 border-slate-300 
-                rounded cursor-pointer hover:bg-sky-700 
-                hover:text-white;
+                @apply border p-2 mr-2 text-xs shadow-sm
+                text-slate-800 border-slate-300 
+                rounded cursor-pointer hover:bg-sky-600 
+                hover:text-white hover:shadow 
+                uppercase font-medium;
+
+                &.selected {
+                    @apply text-white bg-sky-600;
+                }
+            }
+        }
+        .quantity-container {
+            @apply flex flex-row my-2;
+
+            input {
+                @apply border w-9 h-9 
+                text-slate-800 p-3 outline-none 
+                border-slate-300 focus:shadow 
+                focus:border-sky-600 mx-2;
+            }
+
+            .q-icon {
+                @apply h-9 w-9 p-2 border 
+                border-slate-300
+                cursor-pointer stroke-2 text-slate-800;
             }
         }
 
-        input{
-            @apply border w-10 h-9 my-4 text-black p-2
-            outline-offset-2;
-        }
+        .btn-cont {
+            @apply flex flex-row items-center mt-8;
 
-        .add-to-cart {
-            @apply uppercase text-white bg-sky-600 py-3 px-6
-            font-medium text-sm rounded hover:bg-sky-800 w-fit;
+            .add-to-cart {
+                @apply uppercase text-white 
+                bg-orange-600 py-3 px-4 font-semibold 
+                text-sm rounded hover:bg-orange-800 
+                w-fit flex flex-row;
+
+                .b-icon {
+                    @apply h-5 w-5 mr-2;
+                }
+            }
         }
     }
 }

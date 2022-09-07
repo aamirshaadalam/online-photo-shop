@@ -6,6 +6,9 @@ import {
   ChevronRightIcon,
 } from '@heroicons/react/24/outline';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight, faChevronLeft, fachevron } from '@fortawesome/free-solid-svg-icons';
+
 const Pagination = ({ options }) => {
   /**
    * options parameter is used to determine the
