@@ -1,17 +1,43 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Dropdown, FontAwesomeIcon, faCartShopping, Chips } from '.';
 import { getPrice } from '../services/model';
-import { addItemToCart } from '../store';
+import { addItemToCart, getCartItems, updateCartItem } from '../store';
 
 const DetailCard = ({ photo }) => {
   const [size, setSize] = useState('small');
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const { author, id, width, height } = photo;
+  const items = useSelector(getCartItems);
+
+  useEffect(() => {
+    const { size, quantity } = photo;
+    if (size) {
+      setSize(size);
+    }
+
+    if (quantity) {
+      setQuantity(quantity);
+    }
+  }, [photo]);
+
+  const isItemInCart = () => {
+    if (!items || items.length <= 0 || !photo) {
+      return false;
+    }
+
+    const index = items.findIndex((item) => item.id === id && item.size === size);
+
+    return index >= 0;
+  };
 
   const addToCart = () => {
-    dispatch(addItemToCart({ ...photo, size, quantity }));
+    if (isItemInCart()) {
+      dispatch(updateCartItem({ ...photo, size, quantity }));
+    } else {
+      dispatch(addItemToCart({ ...photo, size, quantity }));
+    }
   };
 
   return (

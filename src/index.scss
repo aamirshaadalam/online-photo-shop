@@ -17,5 +17,5 @@
 @import "./styles//detail-card";
 
 .photo-shop {
-    @apply h-screen;
+    @apply h-screen m-0 flex flex-col;
 }

@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { PhotoCard } from '.';
 import { getAllPhotos } from '../services/api/photos';
 
-const PhotoList = () => {
+const PhotoList = ({ pageNumber, pageSize }) => {
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
-    getAllPhotos(1, 25).then((response) => {
+    getAllPhotos(pageNumber, pageSize).then((response) => {
       setPhotos(response);
     });
-  }, []);
+  }, [pageNumber, pageSize]);
 
   const renderCards = () => {
     return photos.map((photo) => {

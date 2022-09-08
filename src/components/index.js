@@ -10,12 +10,13 @@ import Pagination from './common/pagination';
 import Dropdown from './common/dropdown';
 import DetailCard from './detail-card';
 import Chips from './common/chips';
+import NavRightContent from './nav-right-content';
 
 /**
  * Font Awesome Icons
  */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faImages } from '@fortawesome/free-solid-svg-icons';
 
 export {
   Catalog,
@@ -32,4 +33,6 @@ export {
   PhotoDetail,
   DetailCard,
   Chips,
+  faImages,
+  NavRightContent,
 };

@@ -1,1 +1,1 @@
-export { setStyle, hideElements, showElements, addCSSClass, getArraySum } from './helper';
+export { setStyle, hideElements, showElements, addCSSClass } from './helper';

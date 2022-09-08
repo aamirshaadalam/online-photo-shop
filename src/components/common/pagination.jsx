@@ -1,53 +1,39 @@
 import React from 'react';
-import {
-  ChevronDoubleLeftIcon,
-  ChevronDoubleRightIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-} from '@heroicons/react/24/outline';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faChevronLeft, fachevron } from '@fortawesome/free-solid-svg-icons';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { NavLink } from 'react-router-dom';
 
 const Pagination = ({ options }) => {
-  /**
-   * options parameter is used to determine the
-   * page numbers and the navigation buttons for
-   * the pagination control.
-   */
-  const { currentPage, stepSize, first, last, previous, next } = options;
-
+  const { currentPage, stepSize, previous, next, baseLink } = options;
   const renderPageNumbers = () => {
-    /**
-     * Creates HTML for showing page numbers.
-     * Page Numbers to show: currentPage +/- stepSize
-     * If (currentPage - stepSize) is negative, start from page 1
-     */
-    const pages = [];
-    let index = currentPage - stepSize > 0 ? currentPage - stepSize : 1;
+    let satrtIndex = currentPage - stepSize > 0 ? currentPage - stepSize : 1;
 
-    while (pages.length <= 2 * stepSize) {
-      const className = `page-number ${currentPage === index ? 'current' : ''}`;
+    return Array.from(Array(2 * stepSize + 1), (_, index) => {
+      const pageNumber = index + satrtIndex;
+      const className = `page-number ${currentPage === pageNumber ? 'current' : ''}`;
 
-      pages.push(
-        <div className={className} key={index}>
-          {index}
-        </div>
+      return (
+        <NavLink to={getLink(pageNumber)} key={pageNumber}>
+          <div className={className}>{pageNumber}</div>
+        </NavLink>
       );
+    });
+  };
 
-      index++;
+  const getLink = (pageNumber) => {
+    if (!pageNumber || pageNumber <= 0) {
+      return `${baseLink}/1`;
+    } else {
+      return `${baseLink}/${pageNumber}`;
     }
-
-    return pages;
   };
 
   return (
     <div className='pagination-container'>
-      {!!first && <ChevronDoubleLeftIcon className='navigator' />}
-      {!!previous && <ChevronLeftIcon className='navigator' />}
+      <NavLink to={getLink(currentPage - 1)}>
+        {!!previous && <ChevronLeftIcon className={`navigator ${currentPage === 1 ? 'current' : ''}`} />}
+      </NavLink>
       {renderPageNumbers()}
-      {!!next && <ChevronRightIcon className='navigator' />}
-      {!!last && <ChevronDoubleRightIcon className='navigator' />}
+      <NavLink to={getLink(currentPage + 1)}>{!!next && <ChevronRightIcon className='navigator' />}</NavLink>
     </div>
   );
 };

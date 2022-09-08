@@ -1,5 +1,3 @@
-import { Photo } from '../services/model';
-
 export const setStyle = (property, value, refs) => {
   refs.forEach((ref) => {
     if (ref && ref.current) {
@@ -30,12 +28,4 @@ export const showElements = (refs) => {
       ref.current.classList.remove('invisible');
     }
   });
-};
-
-export const getArraySum = (arr, fn, initialValue = 0) => {
-  if (!arr || arr.length <= 0) {
-    return initialValue;
-  }
-
-  return arr.reduce((acc, curr) => acc + fn(curr), initialValue);
 };

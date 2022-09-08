@@ -1,5 +1,5 @@
 .cart {
-    @apply my-16 mx-32 flex flex-col overflow-auto 
+    @apply my-16 mx-32 flex flex-col 
     shadow-lg border rounded;
 
     .cart-header {
@@ -38,6 +38,10 @@
                     .title {
                         @apply text-xl font-medium
                         mb-1;
+                    }
+
+                    .sub-section {
+                        @apply text-sm mb-1 mr-2 capitalize;
                     }
 
                     .remove-from-cart {

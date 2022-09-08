@@ -1,15 +1,9 @@
-import cartReducer, { addItemToCart, removeitemFromCart, updateCartItem, getCartItems } from './slices/cart-slice';
-import photoReducer, { setSelectedPhoto, getSelectedPhoto } from './slices/photo-slice';
-import { store } from './store';
-
-export {
-  store,
-  cartReducer,
+import cartReducer, {
   addItemToCart,
-  removeitemFromCart,
+  removeItemFromCart,
   updateCartItem,
   getCartItems,
-  photoReducer,
-  setSelectedPhoto,
-  getSelectedPhoto,
-};
+} from './slices/cart-slice';
+import { store } from './store';
+
+export { store, cartReducer, addItemToCart, removeItemFromCart, updateCartItem, getCartItems };

@@ -1,7 +1,7 @@
 .nav-bar {
     @apply bg-blue-600 border h-16 px-10
     shadow-xl sticky top-0 flex flex-row 
-    justify-between z-50;
+    justify-between z-50 min-h-[4rem];
 
     .right-content {
         @apply flex flex-row items-center 

@@ -6,6 +6,10 @@
         @apply h-10 w-10 my-6 mx-1 cursor-pointer 
         border p-3 stroke-2 stroke-blue-700 font-bold
         rounded border-slate-200;
+
+        &.current {
+            @apply stroke-slate-500 cursor-not-allowed;
+        }
     }
 
     .page-number {
@@ -15,7 +19,7 @@
         underline underline-offset-2 font-light;
 
         &.current {
-            @apply text-slate-500 cursor-default no-underline;
+            @apply text-slate-500 cursor-not-allowed no-underline;
         }
     }
 }
