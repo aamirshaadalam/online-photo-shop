@@ -1,5 +1,4 @@
-import { PhotoList } from './index';
-import { Pagination } from '../common';
+import { PhotoList, Pagination } from '.';
 
 const Catalog = () => {
   return (

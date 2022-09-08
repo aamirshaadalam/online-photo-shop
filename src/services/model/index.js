@@ -1,1 +1,1 @@
-export { Photo } from './photo';
+export { getImageURL, getPrice } from './photo';

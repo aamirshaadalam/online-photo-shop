@@ -7,10 +7,14 @@
 @import "./styles/common/image-placeholder";
 @import "./styles/common/pagination";
 @import "./styles/common/footer";
+@import "./styles/common/dropdown";
+@import "./styles/common/chips";
 
-@import "./styles/photos/photo-list";
-@import "./styles/photos/photo-card";
-@import "./styles/photos/photo-detail";
+@import "./styles/photo-list";
+@import "./styles/photo-card";
+@import "./styles/photo-detail";
+@import "./styles/cart";
+@import "./styles//detail-card";
 
 .photo-shop {
     @apply h-screen;

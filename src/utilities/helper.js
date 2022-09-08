@@ -32,10 +32,10 @@ export const showElements = (refs) => {
   });
 };
 
-export const parsePhotos = (photos) => {
-  if (photos && photos.length > 0) {
-    return photos.map((photo) => new Photo(photo));
+export const getArraySum = (arr, fn, initialValue = 0) => {
+  if (!arr || arr.length <= 0) {
+    return initialValue;
   }
 
-  return [];
+  return arr.reduce((acc, curr) => acc + fn(curr), initialValue);
 };

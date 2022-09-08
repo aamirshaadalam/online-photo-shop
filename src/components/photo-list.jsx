@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { PhotoCard } from './index';
-import { getAllPhotos } from '../../services/api/photos';
-import { parsePhotos } from '../../utilities';
+import { PhotoCard } from '.';
+import { getAllPhotos } from '../services/api/photos';
 
 const PhotoList = () => {
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
     getAllPhotos(1, 25).then((response) => {
-      setPhotos(parsePhotos(response));
+      setPhotos(response);
     });
   }, []);
 
