@@ -19,8 +19,8 @@
 
     .items {
         .empty-cart-message {
-            @apply text-center font-light text-xl 
-            text-slate-800;
+            @apply text-center font-light text-xl border-t border-b
+            text-slate-800 py-24 mx-6;
         }
 
         .item {

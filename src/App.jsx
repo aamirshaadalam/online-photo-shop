@@ -5,10 +5,12 @@ import { Brand, Footer, NavBar, NavRightContent } from './components';
 
 function App() {
   return (
-    <div className='photo-shop'>
-      <NavBar rightContent={<NavRightContent />} leftContent={<Brand />} />
-      <Outlet />
-      <Footer />
+    <>
+      <div className='photo-shop'>
+        <NavBar rightContent={<NavRightContent />} leftContent={<Brand />} />
+        <Outlet />
+        <Footer />
+      </div>
       <ToastContainer
         className='top-16'
         position='top-right'
@@ -22,7 +24,7 @@ function App() {
         draggable
         pauseOnHover
       />
-    </div>
+    </>
   );
 }
 

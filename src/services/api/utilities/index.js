@@ -1,4 +1,3 @@
-// export { CoreApi } from './core';
 export { api } from './api';
 export { handleError, handleResponse } from './response';
 
