@@ -1,26 +1,30 @@
-import { Catalog, PhotoDetail } from './components/photos';
-import { Footer, NavBar } from './components/common';
-import { Photo } from './services/model';
+import { Outlet } from 'react-router-dom';
+
+import { ToastContainer } from 'react-toastify';
+import { Brand, Footer, NavBar, NavRightContent } from './components';
 
 function App() {
   return (
-    <div className='photo-shop'>
-      <NavBar />
-      {/* <Catalog /> */}
-      <PhotoDetail
-        photo={
-          new Photo({
-            id: '110',
-            author: 'Kenneth Thewissen',
-            width: 5616,
-            height: 3744,
-            url: 'https://unsplash.com/photos/D76DklsG-5U',
-            download_url: 'https://picsum.photos/id/110/5616/3744',
-          })
-        }
+    <>
+      <div className='photo-shop'>
+        <NavBar rightContent={<NavRightContent />} leftContent={<Brand />} />
+        <Outlet />
+        <Footer />
+      </div>
+      <ToastContainer
+        className='top-16'
+        position='top-right'
+        theme='colored'
+        autoClose={1000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
       />
-      <Footer />
-    </div>
+    </>
   );
 }
 

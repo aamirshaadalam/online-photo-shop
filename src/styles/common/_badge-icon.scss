@@ -1,0 +1,17 @@
+.badge-cont-btn {
+    @apply inline-flex relative items-center p-3 
+    text-sm font-medium text-center text-white 
+    bg-blue-600 rounded-lg;
+
+    .badge-notification {
+        @apply inline-flex absolute -top-1 
+        -right-0 justify-center 
+        items-center w-6 h-6 text-xs font-bold 
+        text-white bg-red-500 rounded-full border-2 
+        border-white;
+    }
+
+    .icon {
+        @apply text-white text-lg cursor-pointer mr-1;
+    }
+}

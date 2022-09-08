@@ -1,0 +1,72 @@
+.cart {
+    @apply my-16 mx-32 flex flex-col 
+    shadow-xl border rounded-lg;
+
+    .cart-header {
+        @apply flex flex-row justify-between 
+        items-center my-4 mx-6;
+
+        .item-heading {
+            @apply text-2xl text-slate-800 
+            capitalize font-medium;
+        }
+
+        .item-price {
+            @apply font-medium capitalize 
+            text-slate-500 mr-6;
+        }
+    }
+
+    .items {
+        .empty-cart-message {
+            @apply text-center font-light text-xl border-t border-b
+            text-slate-800 py-24 mx-6;
+        }
+
+        .item {
+            @apply flex flex-row
+            p-2 border-b first:border-t;
+
+            .image {
+                @apply m-1;
+            }
+
+            .detail {
+                @apply flex flex-row justify-between 
+                items-center w-[calc(100%-9rem)];
+
+                .info {
+                    @apply ml-8 flex flex-col;
+
+                    .title {
+                        @apply text-xl font-medium
+                        mb-1;
+                    }
+
+                    .sub-section {
+                        @apply text-sm my-2 mr-2 capitalize 
+                        text-slate-600;
+                    }
+
+                    .remove-from-cart {
+                        @apply capitalize text-xs underline 
+                        underline-offset-2 mt-8 text-orange-600
+                        cursor-pointer font-medium;
+                    }
+                }
+
+                .price {
+                    @apply mr-12 text-slate-600;
+                }
+            }
+        }
+    }
+
+    .cart-footer {
+        @apply my-6 text-right text-xl text-slate-800 mx-14;
+
+        .f-text {
+            @apply mr-2 font-medium;
+        }
+    }
+}

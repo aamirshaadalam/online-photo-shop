@@ -1,0 +1,13 @@
+.dropdown {
+    label {
+        @apply text-sm mb-1 mr-2 text-slate-600;
+    }
+
+    select {
+        @apply border rounded w-8 h-8 pl-2 
+        text-slate-600 outline-none 
+        border-slate-300 focus:shadow 
+        focus:border-sky-600 appearance-none
+        cursor-pointer;
+    }
+}
