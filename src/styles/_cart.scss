@@ -1,6 +1,6 @@
 .cart {
     @apply my-16 mx-32 flex flex-col 
-    shadow-xl border rounded-lg mb-auto;
+    shadow-xl border rounded-lg;
 
     .cart-header {
         @apply flex flex-row justify-between 

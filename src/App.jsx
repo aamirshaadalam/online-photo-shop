@@ -7,15 +7,14 @@ function App() {
   return (
     <div className='photo-shop'>
       <NavBar rightContent={<NavRightContent />} leftContent={<Brand />} />
-      <div className='content'>
-        <Outlet />
-      </div>
+      <Outlet />
       <Footer />
       <ToastContainer
+        className='top-16'
         position='top-right'
         theme='colored'
-        autoClose={5000}
-        hideProgressBar={false}
+        autoClose={1000}
+        hideProgressBar={true}
         newestOnTop={false}
         closeOnClick
         rtl={false}

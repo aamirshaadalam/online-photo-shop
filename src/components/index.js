@@ -13,6 +13,7 @@ import Chips from './common/chips';
 import NavRightContent from './nav-right-content';
 import Brand from './brand';
 import Loader from './common/loader';
+import BadgeIcon from './common/badge-icon';
 
 /**
  * Font Awesome Icons
@@ -40,4 +41,5 @@ export {
   Brand,
   faCameraRetro,
   Loader,
+  BadgeIcon,
 };

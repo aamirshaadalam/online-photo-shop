@@ -1,31 +1,21 @@
 import { toast } from 'react-toastify';
 
-const config = {
-  position: 'top-right',
-  autoClose: 5000,
-  hideProgressBar: false,
-  closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true,
-  progress: undefined,
-};
-
 export const showErrorToast = (message = 'Error') => {
-  toast.error(message, config);
+  toast.error(message);
 };
 
 export const showSuccessToast = (message = 'Success') => {
-  toast.success(message, config);
+  toast.success(message);
 };
 
 export const showWarningToast = (message = 'Warning') => {
-  toast.warn(message, config);
+  toast.warn(message);
 };
 
 export const showInfoToast = (message = 'Info') => {
-  toast.info(message, config);
+  toast.info(message);
 };
 
 export const showToast = (message = 'Default') => {
-  toast(message, config);
+  toast(message);
 };
