@@ -12,6 +12,7 @@ import DetailCard from './detail-card';
 import Chips from './common/chips';
 import NavRightContent from './nav-right-content';
 import Brand from './brand';
+import Loader from './common/loader';
 
 /**
  * Font Awesome Icons
@@ -38,4 +39,5 @@ export {
   NavRightContent,
   Brand,
   faCameraRetro,
+  Loader,
 };

@@ -9,6 +9,7 @@
 @import "./styles/common/footer";
 @import "./styles/common/dropdown";
 @import "./styles/common/chips";
+@import "./styles/common/loader";
 
 @import "./styles/photo-list";
 @import "./styles/photo-card";
@@ -21,4 +22,8 @@
 
 .photo-shop {
     @apply h-screen flex flex-col;
+
+    .content {
+        @apply mb-auto;
+    }
 }

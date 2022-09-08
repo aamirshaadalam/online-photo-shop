@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getPrice } from '../../services/model';
+import { showSuccessToast } from '../../utilities';
 
 const initialState = {
   items: [],
@@ -33,10 +34,13 @@ export const cartSlice = createSlice({
   reducers: {
     addItemToCart: (state, { payload }) => {
       const item = state.items.find((item) => item.id === payload.id && item.size === payload.size);
-      if (item) {
+
+      if (item && item.quantity !== payload.quantity) {
         item.quantity = payload.quantity;
-      } else {
+        showSuccessToast('Successfully updated the quantity');
+      } else if (!item) {
         state.items.push(payload);
+        showSuccessToast('Successfully added image to the cart');
       }
 
       state.totalQuantity = getUpdatedQuantity(state.items);
@@ -46,6 +50,7 @@ export const cartSlice = createSlice({
       state.items = state.items.filter((item) => !(item.id === payload.id && item.size === payload.size));
       state.totalQuantity = getUpdatedQuantity(state.items);
       state.totalAmount = getUpdatedAmount(state.items);
+      showSuccessToast('Image removed from cart');
     },
   },
 });

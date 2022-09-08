@@ -1,5 +1,5 @@
-import { PhotoList, Pagination } from '.';
 import { useParams } from 'react-router-dom';
+import { PhotoList, Pagination } from '.';
 
 const Catalog = () => {
   const { pageNumber } = useParams();

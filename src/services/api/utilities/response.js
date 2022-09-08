@@ -1,3 +1,5 @@
+import { showErrorToast } from '../../../utilities';
+
 export function handleResponse(response) {
   if (response.results) {
     return response.results;
@@ -11,6 +13,8 @@ export function handleResponse(response) {
 }
 
 export function handleError(error) {
+  showErrorToast(error.message);
+
   if (error.data) {
     return error.data;
   }

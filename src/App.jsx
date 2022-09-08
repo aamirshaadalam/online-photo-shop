@@ -7,7 +7,9 @@ function App() {
   return (
     <div className='photo-shop'>
       <NavBar rightContent={<NavRightContent />} leftContent={<Brand />} />
-      <Outlet />
+      <div className='content'>
+        <Outlet />
+      </div>
       <Footer />
       <ToastContainer
         position='top-right'

@@ -1,28 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { PhotoCard } from '.';
+import { PhotoCard, Loader } from '.';
 import { getAllPhotos } from '../services/api/photos';
-import { toast } from 'react-toastify';
 
 const PhotoList = ({ pageNumber, pageSize }) => {
   const [photos, setPhotos] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
+
     getAllPhotos(pageNumber, pageSize)
       .then((response) => {
         setPhotos(response);
-        // toast.error('Error fetching photos', {
-        //   position: 'top-right',
-        //   autoClose: 5000,
-        //   hideProgressBar: false,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        // });
       })
-      .catch(() => {
-        
-      });
+      .finally(() => setLoading(false));
   }, [pageNumber, pageSize]);
 
   const renderCards = () => {
@@ -37,7 +28,7 @@ const PhotoList = ({ pageNumber, pageSize }) => {
     });
   };
 
-  return <div className='photo-list'>{renderCards()}</div>;
+  return <div className='photo-list'>{loading ? <Loader /> : renderCards()}</div>;
 };
 
 export default PhotoList;
