@@ -8,7 +8,7 @@
         rounded border-slate-200;
 
         &.current {
-            @apply stroke-slate-500 cursor-not-allowed;
+            @apply stroke-slate-500 cursor-default;
         }
     }
 
@@ -19,7 +19,7 @@
         underline underline-offset-2 font-light;
 
         &.current {
-            @apply text-slate-500 cursor-not-allowed no-underline;
+            @apply text-slate-500 cursor-default no-underline;
         }
     }
 }

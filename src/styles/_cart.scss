@@ -1,31 +1,34 @@
 .cart {
     @apply my-16 mx-32 flex flex-col 
-    shadow-lg border rounded;
+    shadow-xl border rounded-lg mb-auto;
 
     .cart-header {
         @apply flex flex-row justify-between 
-        items-end m-5;
+        items-center my-4 mx-6;
 
         .item-heading {
-            @apply text-2xl capitalize font-medium;
+            @apply text-2xl text-slate-800 
+            capitalize font-medium;
         }
 
         .item-price {
-            @apply font-medium capitalize mr-10 text-slate-500;
+            @apply font-medium capitalize 
+            text-slate-500 mr-6;
         }
     }
 
     .items {
         .empty-cart-message {
-            @apply text-center font-light text-xl text-slate-800;
+            @apply text-center font-light text-xl 
+            text-slate-800;
         }
 
         .item {
-            @apply flex flex-row 
-            m-2 border-b first:border-t;
+            @apply flex flex-row
+            p-2 border-b first:border-t;
 
             .image {
-                @apply h-32 w-32 m-2;
+                @apply m-1;
             }
 
             .detail {
@@ -41,28 +44,29 @@
                     }
 
                     .sub-section {
-                        @apply text-sm mb-1 mr-2 capitalize;
+                        @apply text-sm my-2 mr-2 capitalize 
+                        text-slate-600;
                     }
 
                     .remove-from-cart {
                         @apply capitalize text-xs underline 
-                        underline-offset-2 my-2 text-sky-600
+                        underline-offset-2 mt-8 text-orange-600
                         cursor-pointer font-medium;
                     }
                 }
 
                 .price {
-                    @apply mr-12;
+                    @apply mr-12 text-slate-600;
                 }
             }
         }
     }
 
     .cart-footer {
-        @apply my-6 text-right mx-14;
+        @apply my-6 text-right text-xl text-slate-800 mx-14;
 
         .f-text {
-            @apply text-lg mr-2 font-medium;
+            @apply mr-2 font-medium;
         }
     }
 }

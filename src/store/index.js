@@ -1,9 +1,19 @@
 import cartReducer, {
   addItemToCart,
   removeItemFromCart,
-  updateCartItem,
   getCartItems,
+  getTotalQuantiy,
+  getTotalAmount,
 } from './slices/cart-slice';
-import { store } from './store';
+import { store, persistor } from './store';
 
-export { store, cartReducer, addItemToCart, removeItemFromCart, updateCartItem, getCartItems };
+export {
+  store,
+  persistor,
+  cartReducer,
+  addItemToCart,
+  removeItemFromCart,
+  getCartItems,
+  getTotalQuantiy,
+  getTotalAmount,
+};

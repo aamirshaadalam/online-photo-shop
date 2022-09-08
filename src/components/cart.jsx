@@ -1,32 +1,15 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { PhotoCard, Dropdown } from '.';
 import { getPrice } from '../services/model';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCartItems, removeItemFromCart } from '../store';
+import { getCartItems, removeItemFromCart, addItemToCart, getTotalQuantiy, getTotalAmount } from '../store';
 
 const Cart = () => {
   const dispatch = useDispatch();
   const photos = useSelector(getCartItems);
-
-  const getTotalCount = () => {
-    if (!photos || photos.length <= 0) {
-      return 0;
-    }
-
-    return photos.reduce((acc, curr) => acc + curr.quantity, 0);
-  };
-
-  const getTotalCost = () => {
-    if (!photos || photos.length <= 0) {
-      return 0;
-    }
-
-    return photos.reduce((acc, curr) => {
-      const { quantity, width, size } = curr;
-
-      return acc + quantity * getPrice(width, size);
-    }, 0);
-  };
+  const totalQuantity = useSelector(getTotalQuantiy);
+  const totalAmount = useSelector(getTotalAmount);
 
   const renderItems = () => {
     if (!photos || photos.length <= 0) {
@@ -34,7 +17,7 @@ const Cart = () => {
     }
 
     return photos.map((photo, index) => {
-      const cardOptions = { photo, cssClass: 'photo', width: 200 };
+      const cardOptions = { photo, cssClass: 'photo inset', width: 200 };
       const { author, id, quantity, size, width } = photo;
 
       return (
@@ -46,7 +29,12 @@ const Cart = () => {
             <div className='info'>
               <span className='title'>{`${author} - ${id}`}</span>
               <span className='sub-section'>size: {`${size}`}</span>
-              <Dropdown label='Quantity' options={[1, 2, 3, 4, 5]} quantity={quantity} />
+              <Dropdown
+                label='Quantity'
+                options={[1, 2, 3, 4, 5]}
+                quantity={quantity}
+                onSelectedChange={(updatedQuantity) => dispatch(addItemToCart({ ...photo, quantity: updatedQuantity }))}
+              />
               <span className='remove-from-cart' onClick={() => dispatch(removeItemFromCart({ id, size }))}>
                 remove
               </span>
@@ -66,8 +54,8 @@ const Cart = () => {
       </div>
       <div className='items'>{renderItems()}</div>
       <div className='cart-footer'>
-        <span className='f-text'>{`Total (${getTotalCount()} items):`}</span>
-        <span>{`$${getTotalCost()}`}</span>
+        <span className='f-text'>{`Total (${totalQuantity} items):`}</span>
+        <span>{`$${totalAmount}`}</span>
       </div>
     </div>
   );

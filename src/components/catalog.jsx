@@ -1,16 +1,8 @@
 import { PhotoList, Pagination } from '.';
-// import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const Catalog = () => {
-  // const [page, setPage] = useState(1);
   const { pageNumber } = useParams();
-
-  // useEffect(() => {
-  //   if (pageNumber || !isNaN(parseInt(pageNumber, 10))) {
-  //     setPage(parseInt(pageNumber, 10));
-  //   }
-  // }, [pageNumber]);
 
   return (
     <div className='catalog'>

@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Dropdown, FontAwesomeIcon, faCartShopping, Chips } from '.';
 import { getPrice } from '../services/model';
-import { addItemToCart, getCartItems, updateCartItem } from '../store';
+import { addItemToCart } from '../store';
 
 const DetailCard = ({ photo }) => {
   const [size, setSize] = useState('small');
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const { author, id, width, height } = photo;
-  const items = useSelector(getCartItems);
 
   useEffect(() => {
     const { size, quantity } = photo;
@@ -21,24 +20,6 @@ const DetailCard = ({ photo }) => {
       setQuantity(quantity);
     }
   }, [photo]);
-
-  const isItemInCart = () => {
-    if (!items || items.length <= 0 || !photo) {
-      return false;
-    }
-
-    const index = items.findIndex((item) => item.id === id && item.size === size);
-
-    return index >= 0;
-  };
-
-  const addToCart = () => {
-    if (isItemInCart()) {
-      dispatch(updateCartItem({ ...photo, size, quantity }));
-    } else {
-      dispatch(addItemToCart({ ...photo, size, quantity }));
-    }
-  };
 
   return (
     <div className='detail-card'>
@@ -60,11 +41,11 @@ const DetailCard = ({ photo }) => {
       <Dropdown
         label='Quantity'
         options={[1, 2, 3, 4, 5]}
-        onSelectedChange={(quantity) => setQuantity(quantity)}
+        onSelectedChange={setQuantity}
         quantity={quantity}
       />
       <div className='btn-cont'>
-        <button className='add-to-cart' onClick={addToCart}>
+        <button className='add-to-cart' onClick={() => dispatch(addItemToCart({ ...photo, size, quantity }))}>
           <FontAwesomeIcon icon={faCartShopping} className='b-icon' />
           <span className='b-text'>add to cart</span>
         </button>

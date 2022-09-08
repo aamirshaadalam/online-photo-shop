@@ -1,10 +1,8 @@
 .photo-detail {
     @apply flex flex-row justify-center 
-    h-4/6 my-10 mx-40;
+    h-4/6 my-10 mx-40 mb-auto;
 
     .card {
         @apply w-1/2;
     }
-
-    
 }

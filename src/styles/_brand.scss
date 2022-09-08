@@ -1,0 +1,12 @@
+.brand {
+    @apply flex flex-row cursor-pointer;
+
+    .brand-icon {
+        @apply text-white text-3xl my-4 mr-2;
+    }
+
+    .brand-text {
+        @apply text-white font-serif italic 
+        text-xl align-middle my-4 mr-2;
+    }
+}

@@ -4,7 +4,7 @@
         p-12 flex flex-col;
     
         .value {
-            @apply text-slate-800 font-light ml-2;
+            @apply text-slate-600 ml-2;
         }
     
         h1 {
@@ -14,13 +14,13 @@
         }
     
         h2 {
-            @apply font-semibold text-lg 
-            text-slate-500 mt-3;
+            @apply text-lg 
+            text-slate-600 mt-3;
         }
     
         .title {
-            @apply block text-slate-500 text-sm
-            mt-3 font-semibold;
+            @apply block text-slate-600 text-sm
+            mt-3;
         }
     
         

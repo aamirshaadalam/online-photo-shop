@@ -14,8 +14,11 @@
 @import "./styles/photo-card";
 @import "./styles/photo-detail";
 @import "./styles/cart";
-@import "./styles//detail-card";
+@import "./styles/detail-card";
+@import "./styles/brand";
+
+@import "~react-toastify/dist/ReactToastify.css";
 
 .photo-shop {
-    @apply h-screen m-0 flex flex-col;
+    @apply h-screen flex flex-col;
 }
