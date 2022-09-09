@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <BrowserRouter basename='/photoshop'>
+      <BrowserRouter>
         <Routes>
           <Route path='/' element={<App />}>
             <Route index element={<Catalog />}></Route>
