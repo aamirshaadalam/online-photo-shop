@@ -1,9 +1,21 @@
 import React from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { getCurrentPage } from '../../store';
 
 const Pagination = ({ options }) => {
-  const { currentPage, stepSize, previous, next, baseLink } = options;
+  const { stepSize, previous, next, baseLink } = options;
+  const currentPage = useSelector(getCurrentPage);
+
+  const getLink = (pageNumber) => {
+    if (!pageNumber || pageNumber <= 0) {
+      return `${baseLink}/1`;
+    } else {
+      return `${baseLink}/${pageNumber}`;
+    }
+  };
+
   const renderPageNumbers = () => {
     let satrtIndex = currentPage - stepSize > 0 ? currentPage - stepSize : 1;
 
@@ -17,14 +29,6 @@ const Pagination = ({ options }) => {
         </NavLink>
       );
     });
-  };
-
-  const getLink = (pageNumber) => {
-    if (!pageNumber || pageNumber <= 0) {
-      return `${baseLink}/1`;
-    } else {
-      return `${baseLink}/${pageNumber}`;
-    }
   };
 
   return (

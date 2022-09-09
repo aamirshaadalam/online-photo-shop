@@ -5,6 +5,9 @@ import cartReducer, {
   getTotalQuantiy,
   getTotalAmount,
 } from './slices/cart-slice';
+
+import paginationReducer, { getCurrentPage, setCurrentPage, setPageSize, getPageSize } from './slices/page-slice';
+
 import { store, persistor } from './store';
 
 export {
@@ -16,4 +19,9 @@ export {
   getCartItems,
   getTotalQuantiy,
   getTotalAmount,
+  paginationReducer,
+  getCurrentPage,
+  setCurrentPage,
+  setPageSize,
+  getPageSize,
 };

@@ -1,0 +1,15 @@
+.not-found {
+    @apply flex flex-col justify-center items-center;
+
+    .nf-header {
+        @apply text-3xl font-medium my-2;
+    }
+
+    .nf-text {
+        @apply text-xl my-2;
+        .nf-nav {
+            @apply mx-2 text-blue-600 underline 
+            underline-offset-2;
+        }
+    }
+}

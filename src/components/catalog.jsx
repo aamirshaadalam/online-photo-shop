@@ -1,15 +1,26 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { PhotoList, Pagination } from '.';
+import { setCurrentPage } from '../store';
 
 const Catalog = () => {
+  const dispatch = useDispatch();
   const { pageNumber } = useParams();
+
+  /**
+   * Update state every time the
+   * page number in url changes
+   */
+  useEffect(() => {
+    dispatch(setCurrentPage(pageNumber));
+  }, [pageNumber, dispatch]);
 
   return (
     <div className='catalog'>
-      <PhotoList pageNumber={parseInt(pageNumber, 10) || 1} pageSize={25} />
+      <PhotoList />
       <Pagination
         options={{
-          currentPage: parseInt(pageNumber, 10) || 1,
           stepSize: 2,
           previous: true,
           next: true,

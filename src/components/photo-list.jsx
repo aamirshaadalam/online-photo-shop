@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { PhotoCard, Loader } from '.';
 import { getAllPhotos } from '../services/api/photos';
+import { getCurrentPage, getPageSize } from '../store';
 
-const PhotoList = ({ pageNumber, pageSize }) => {
+const PhotoList = () => {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(false);
+  const pageNumber = useSelector(getCurrentPage);
+  const pageSize = useSelector(getPageSize);
 
   useEffect(() => {
     setLoading(true);
@@ -18,7 +22,7 @@ const PhotoList = ({ pageNumber, pageSize }) => {
 
   const renderCards = () => {
     return photos.map((photo) => {
-      const options = { photo, cssClass: 'photo shadow clickable', width: 200 };
+      const options = { photo, cssClass: 'photo', width: 200 };
 
       return (
         <div className='card' key={photo.id}>
