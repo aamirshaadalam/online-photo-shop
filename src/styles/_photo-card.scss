@@ -1,16 +1,13 @@
 .photo {
-    @apply p-3 border rounded-lg h-full w-full;
-
-    &.clickable {
-        @apply cursor-pointer;
-    }
+    @apply p-3 h-full w-full;
 
     &.shadow {
-        @apply shadow-xl;
+        @apply border rounded-lg shadow-xl;
     }
 
     &.inset {
-        @apply ring-1 ring-slate-100 ring-inset;
+        @apply ring-1 ring-slate-100 
+        ring-inset border rounded-lg;
     }
 
     img {

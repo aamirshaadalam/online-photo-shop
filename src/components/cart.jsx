@@ -17,7 +17,7 @@ const Cart = () => {
     }
 
     return photos.map((photo, index) => {
-      const cardOptions = { photo, cssClass: 'photo inset', width: 200 };
+      const cardOptions = { photo, cssClass: 'photo', width: 200 };
       const { author, id, quantity, size, width } = photo;
 
       return (

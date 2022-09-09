@@ -18,7 +18,7 @@ const PhotoList = ({ pageNumber, pageSize }) => {
 
   const renderCards = () => {
     return photos.map((photo) => {
-      const options = { photo, cssClass: 'photo shadow clickable', width: 200 };
+      const options = { photo, cssClass: 'photo', width: 200 };
 
       return (
         <div className='card' key={photo.id}>
