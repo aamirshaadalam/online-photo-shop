@@ -10,7 +10,10 @@ const Catalog = () => {
 
   /**
    * Update state every time the
-   * page number in url changes
+   * page number in url changes.
+   * This is to keep record of the
+   * last visited page and load it
+   * when catalog link is accessed
    */
   useEffect(() => {
     dispatch(setCurrentPage(pageNumber));

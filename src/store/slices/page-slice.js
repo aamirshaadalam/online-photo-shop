@@ -25,12 +25,9 @@ export const pageSlice = createSlice({
   },
 });
 
-// Actions
 export const { setCurrentPage, setPageSize } = pageSlice.actions;
 
-// Selectors
 export const getCurrentPage = (state) => state.pagination.page;
 export const getPageSize = (state) => state.pagination.pageSize;
 
-// Reducer
 export default pageSlice.reducer;

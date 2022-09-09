@@ -1,24 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { PhotoCard, Loader } from '.';
-import { getAllPhotos } from '../services/api/photos';
-import { getCurrentPage, getPageSize } from '../store';
+import { getCurrentPage, getPageSize, fetcPhotos, getLoadingStatus } from '../store';
 
 const PhotoList = () => {
-  const [photos, setPhotos] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const isLoading = useSelector(getLoadingStatus);
   const pageNumber = useSelector(getCurrentPage);
   const pageSize = useSelector(getPageSize);
+  const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
-    setLoading(true);
-
-    getAllPhotos(pageNumber, pageSize)
-      .then((response) => {
-        setPhotos(response);
-      })
-      .finally(() => setLoading(false));
-  }, [pageNumber, pageSize]);
+    dispatch(fetcPhotos({ pageNumber, pageSize })).then(({ payload }) => {
+      setPhotos(payload);
+    });
+  }, [pageNumber, pageSize, dispatch]);
 
   const renderCards = () => {
     return photos.map((photo) => {
@@ -32,7 +28,7 @@ const PhotoList = () => {
     });
   };
 
-  return <div className='photo-list'>{loading ? <Loader /> : renderCards()}</div>;
+  return <div className='photo-list'>{isLoading ? <Loader /> : renderCards()}</div>;
 };
 
 export default PhotoList;
