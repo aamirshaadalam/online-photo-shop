@@ -13,7 +13,7 @@ const Catalog = () => {
           stepSize: 2,
           previous: true,
           next: true,
-          baseLink: `/catalog/`,
+          baseLink: `/catalog`,
         }}
       />
     </div>
