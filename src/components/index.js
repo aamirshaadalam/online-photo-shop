@@ -14,6 +14,7 @@ import NavRightContent from './nav-right-content';
 import Brand from './brand';
 import Loader from './common/loader';
 import BadgeIcon from './common/badge-icon';
+import NotFound from './not-found';
 
 /**
  * Font Awesome Icons
@@ -42,4 +43,5 @@ export {
   faCameraRetro,
   Loader,
   BadgeIcon,
+  NotFound,
 };

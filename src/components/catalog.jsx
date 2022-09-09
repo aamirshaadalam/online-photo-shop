@@ -8,6 +8,10 @@ const Catalog = () => {
   const dispatch = useDispatch();
   const { pageNumber } = useParams();
 
+  /**
+   * Update state every time the
+   * page number in url changes
+   */
   useEffect(() => {
     dispatch(setCurrentPage(pageNumber));
   }, [pageNumber, dispatch]);
