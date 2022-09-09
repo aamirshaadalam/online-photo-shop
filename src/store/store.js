@@ -1,5 +1,5 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { cartReducer, paginationReducer } from '.';
+import { cartReducer, paginationReducer, photosReducer } from '.';
 import storage from 'redux-persist/lib/storage';
 import { persistStore, persistReducer } from 'redux-persist';
 import thunk from 'redux-thunk';
@@ -12,6 +12,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   cart: cartReducer,
   pagination: paginationReducer,
+  photos: photosReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

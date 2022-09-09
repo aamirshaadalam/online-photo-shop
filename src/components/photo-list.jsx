@@ -11,7 +11,9 @@ const PhotoList = () => {
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
-    dispatch(fetcPhotos({ pageNumber, pageSize })).then((response) => setPhotos(response));
+    dispatch(fetcPhotos({ pageNumber, pageSize })).then(({ payload }) => {
+      setPhotos(payload);
+    });
   }, [pageNumber, pageSize, dispatch]);
 
   const renderCards = () => {

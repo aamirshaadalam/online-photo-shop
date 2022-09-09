@@ -8,7 +8,7 @@ import cartReducer, {
 
 import paginationReducer, { getCurrentPage, setCurrentPage, setPageSize, getPageSize } from './slices/page-slice';
 
-import { fetcPhotos, getLoadingStatus } from './slices/photos-slice';
+import photosReducer, { fetcPhotos, getLoadingStatus } from './slices/photos-slice';
 
 import { store, persistor } from './store';
 
@@ -28,4 +28,5 @@ export {
   getPageSize,
   fetcPhotos,
   getLoadingStatus,
+  photosReducer,
 };

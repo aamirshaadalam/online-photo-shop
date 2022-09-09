@@ -1,12 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { showErrorToast } from '../../utilities';
-import { getAllPhotos } from '../services/api/photos';
+import { getAllPhotos } from '../../services/api/photos';
 
 export const fetcPhotos = createAsyncThunk('photos/fetchList', async (pagination, { rejectWithValue }) => {
   try {
     const { pageNumber, pageSize } = pagination;
-    const response = await getAllPhotos(pageNumber, pageSize);
-    return response.data;
+    return await getAllPhotos(pageNumber, pageSize);
   } catch (error) {
     showErrorToast('Error in fetching photos');
     rejectWithValue(error);
@@ -23,9 +22,15 @@ export const photosSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetcPhotos.fulfilled, (state) => (state.loading = false))
-      .addCase(fetcPhotos.pending, (state) => (state.loading = true))
-      .addCase(fetcPhotos.rejected, (state) => (state.loading = false));
+      .addCase(fetcPhotos.fulfilled, (state) => {
+        state.loading = false;
+      })
+      .addCase(fetcPhotos.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetcPhotos.rejected, (state) => {
+        state.loading = false;
+      });
   },
 });
 
