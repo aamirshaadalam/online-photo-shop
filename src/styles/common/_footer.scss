@@ -1,6 +1,6 @@
 .footer {
     @apply bg-gray-900 border rounded-b-xl h-24 px-10
-    flex flex-row justify-start items-center min-h-[6rem];
+    flex flex-row justify-start min-h-[6rem] items-center;
 
     .fa-icon {
         @apply text-white text-2xl mx-3 cursor-pointer;
