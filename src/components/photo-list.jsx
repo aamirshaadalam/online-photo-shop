@@ -21,7 +21,7 @@ const PhotoList = () => {
       const options = { photo, cssClass: 'photo', width: 200 };
 
       return (
-        <div className='card' key={photo.id}>
+        <div data-testid='photo-card' className='card' key={photo.id}>
           <PhotoCard options={options} />
         </div>
       );

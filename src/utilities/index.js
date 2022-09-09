@@ -4,3 +4,5 @@ export { showErrorToast, showInfoToast, showSuccessToast, showToast, showWarning
 export const ITEM_ADDED_TO_CART_MSG = 'Item added to cart';
 export const QUANTITY_UPDATED_MSG = 'Quantity updated';
 export const ITEM_REMOVED_FROM_CART_MSG = 'Item removed from cart';
+
+export * from './test-utils';
